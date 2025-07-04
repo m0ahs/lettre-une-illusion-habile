@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#ffffff">
+    <title>Lettre à une illusion habile</title>
+    <meta name="description" content="Une réflexion personnelle sur l'amour et la trahison">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lettre à une illusion habile">
+    <meta property="og:description" content="Une réflexion personnelle sur l'amour et la trahison">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Custom styles from globals.css */
+        html {
+            font-feature-settings: "rlig" 1, "calt" 1;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            font-feature-settings: "rlig" 1, "calt" 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            font-size: 16px;
+        }
+
+        ::selection {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        ::-moz-selection {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        button, a {
+            touch-action: manipulation;
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        .mobile-optimized {
+            -webkit-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        /* Enhanced mobile typography */
+        @media (max-width: 640px) {
+            body {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            p {
+                margin-bottom: 1.25rem;
+                line-height: 1.7;
+            }
+
+            article {
+                letter-spacing: 0.01em;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width: 640px) {
+            body {
+                font-size: 17px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt !important;
+            }
+
+            main {
+                padding: 1rem !important;
+                min-height: auto !important;
+            }
+
+            h1 {
+                font-size: 20pt !important;
+                margin-bottom: 1.5rem !important;
+                page-break-after: avoid;
+            }
+
+            p {
+                font-size: 11pt !important;
+                line-height: 1.5 !important;
+                margin-bottom: 0.75rem !important;
+                page-break-inside: avoid;
+                orphans: 2;
+                widows: 2;
+            }
+
+            button {
+                display: none !important;
+            }
+
+            a {
+                color: black !important;
+                text-decoration: underline !important;
+            }
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            body {
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-weight: 400;
+            }
+        }
+
+        @media (max-height: 500px) and (orientation: landscape) {
+            main {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+
+            .space-y-6 > * + * {
+                margin-top: 1.25rem !important;
+            }
+
+            h1 {
+                font-size: 1.75rem !important;
+                line-height: 1.3 !important;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            main {
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: white;
+                color: black;
+            }
+        }
+
+        @media (max-width: 375px) {
+            h1 {
+                font-size: 1.625rem !important;
+                line-height: 1.3 !important;
+            }
+
+            article {
+                font-size: 1rem !important;
+                line-height: 1.7 !important;
+                letter-spacing: 0.015em !important;
+            }
+        }
+
+        @media (min-width: 375px) and (max-width: 414px) {
+            h1 {
+                font-size: 1.75rem !important;
+            }
+
+            article {
+                font-size: 1.125rem !important;
+                line-height: 1.65 !important;
+            }
+        }
+
+        /* Modal transitions */
+        .modal-backdrop {
+            transition: background-color 0.2s ease-out;
+        }
+
+        .modal-backdrop.show {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content {
+            transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+            opacity: 0;
+            transform: scale(0.95) translateY(8px);
+        }
+
+        .modal-content.show {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="mobile-optimized">
+    <main class="min-h-screen bg-white flex items-center justify-center px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 xl:px-16 xl:py-24 relative">
+        <div class="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto text-center space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16 xl:space-y-20">
+            <header>
+                <h1 class="text-2xl leading-tight sm:text-3xl sm:leading-tight md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight xl:text-6xl xl:leading-tight 2xl:text-7xl 2xl:leading-tight font-normal text-black tracking-tight">
+                    Lettre à une illusion habile
+                </h1>
+                <p>Une fiction inspirée de thèmes universels : rupture, résilience et illusion.</p>
+            </header>
+
+            <article class="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-10 xl:space-y-12 text-base leading-relaxed sm:text-lg sm:leading-relaxed md:text-xl md:leading-relaxed lg:text-2xl lg:leading-relaxed xl:text-3xl xl:leading-relaxed text-black font-normal tracking-wide">
+                <p>
+                    Il y avait cette fille. Pas juste belle. Fascinante. Celle qui, dès les premiers instants, donnait
+                    l'impression que vous comptiez, comme si vous étiez tombé pile au bon endroit, dans l'angle exact
+                    de sa solitude.
+                </p>
+
+                <p>
+                    Elle disait qu'elle avait souffert. Beaucoup. Qu'elle avait été trahie, délaissée. Elle disait
+                    qu'elle ne voulait pas blesser, qu'elle voulait construire lentement. Elle disait tout cela, avec
+                    une voix douce, un regard trouble, une mélancolie parfaitement calibrée.
+                </p>
+
+                <p>
+                    Ce qu'elle ne disait pas, c'est qu'elle mentait parfois sans s'en rendre compte.
+                    Qu'elle glissait d'une relation à l'autre sans jamais vraiment se retourner. Qu'elle
+                    savait donner juste assez pour que l'on s'attache, et s'effacer juste assez pour qu'on
+                    doute. Elle jouait la carte de la fragilité, mais dans l'ombre, c'est elle qui tenait les fils.
+                </p>
+
+                <p>
+                    Il y avait ce garçon aussi. Déjà cabossé. Il avait fait des erreurs, des dérapages, oui. Mais il avait
+                    changé, sincèrement. Il avait cru en cette deuxième chance. Il avait tendu la main, accompagné dans les
+                    moments de doute, été présent quand elle partait en voyage, offert son épaule quand elle voulait être seule,
+                    mais pas trop.
+                </p>
+
+                <p>
+                    Elle est revenue vers lui. Lui disant qu'il avait changé, qu'elle voulait essayer encore. Et quand
+                    il a cru que cette fois serait différente, elle s'est détournée. Encore.
+                </p>
+
+                <p>
+                    Mais elle ne l'a pas quitté franchement. Non. Elle a parlé de pause, de doutes, d'examens, de
+                    fatigue. Tout, sauf la vérité. Parce que la vérité était plus simple : elle avait déjà décidé de partir.
+                    Peut-être même qu'elle avait déjà trouvé quelqu'un d'autre.
+                </p>
+
+                <p>
+                    Lui, il voulait une explication. Pas pour raviver la flamme. Pour comprendre. Pour ne pas reproduire. Mais
+                    même ça, elle l'a refusé. Parce que dans son monde, la vérité ne compte pas autant que l'image
+                    qu'elle garde d'elle-même.
+                </p>
+
+                <p>
+                    Il a compris, trop tard. Qu'il n'était pas aimé. Il était utile. Il était la transition. Il était
+                    celui qu'on appelle quand on a besoin de se reconstruire, pas celui qu'on garde quand on se sent
+                    de nouveau belle.
+                </p>
+
+                <p>
+                    Alors aujourd'hui, il garde son nom comme un espace vide. Un domaine déserté. Pas pour la venger. Pour
+                    ne pas oublier.
+                </p>
+
+                <p>
+                    Parce qu'il faut parfois raconter les histoires telles qu'elles sont : les personnes brisées ne
+                    sont pas toutes innocentes. Certaines savent parfaitement comment exploiter l'empathie qu'on leur
+                    offre.
+                </p>
+
+                <p>
+                    Et si tu lis ça, ce n'est pas pour elle. C'est pour toi. Pour te dire qu'il y a des illusions
+                    qui blessent plus que les coups. Et qu'il vaut mieux les reconnaître avant qu'elles ne deviennent
+                    le centre de ta vie.
+                </p>
+            </article>
+        </div>
+
+        <!-- Information Button -->
+        <button
+            id="infoButton"
+            class="fixed bottom-4 right-4 w-12 h-12 sm:bottom-6 sm:right-6 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full border border-black bg-white hover:bg-black hover:text-white transition-all duration-200 flex items-center justify-center text-base sm:text-sm md:text-base font-normal touch-manipulation"
+            aria-label="Informations"
+        >
+            i
+        </button>
+    </main>
+
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="fixed inset-0 bg-black modal-backdrop flex items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10 z-50 hidden">
+        <div class="bg-white border border-black w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto p-6 sm:p-7 md:p-8 lg:p-10 relative modal-content">
+            <button
+                id="closeModal"
+                class="absolute top-4 right-4 sm:top-5 sm:right-5 w-10 h-10 sm:w-8 sm:h-8 md:w-9 md:h-9 flex items-center justify-center hover:bg-gray-100 transition-colors duration-200 text-xl sm:text-lg md:text-xl leading-none touch-manipulation"
+                aria-label="Fermer"
+            >
+                ×
+            </button>
+            <p class="text-sm leading-relaxed sm:text-base sm:leading-relaxed md:text-lg md:leading-relaxed text-black pr-8 sm:pr-10">
+                Le présent site contient un texte de nature littéraire et introspective. Il s'agit d'une œuvre de fiction librement inspirée de thèmes universels tels que la rupture, la reconstruction et l'illusion amoureuse.
+
+                Toute ressemblance avec des personnes existantes ou ayant existé serait entièrement fortuite. Aucun nom, fait, ou détail personnel vérifiable n'a été utilisé. Le nom de domaine utilisé est un choix symbolique et artistique, et ne vise aucune personne réelle en particulier.
+
+                Ce contenu n'a pas pour but de nuire, d'exposer ou de porter atteinte à qui que ce soit, mais d'exprimer une réflexion personnelle dans un cadre artistique.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const infoButton = document.getElementById('infoButton');
+        const disclaimerModal = document.getElementById('disclaimerModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalBackdrop = disclaimerModal;
+        const modalContent = disclaimerModal.querySelector('.modal-content');
+
+        function openModal() {
+            disclaimerModal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+            
+            // Trigger animation
+            setTimeout(() => {
+                modalBackdrop.classList.add('show');
+                modalContent.classList.add('show');
+            }, 10);
+        }
+
+        function closeModalFunc() {
+            modalBackdrop.classList.remove('show');
+            modalContent.classList.remove('show');
+            
+            setTimeout(() => {
+                disclaimerModal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+            }, 200);
+        }
+
+        // Event listeners
+        infoButton.addEventListener('click', openModal);
+        closeModal.addEventListener('click', closeModalFunc);
+        
+        // Close modal when clicking on backdrop
+        modalBackdrop.addEventListener('click', (e) => {
+            if (e.target === modalBackdrop) {
+                closeModalFunc();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !disclaimerModal.classList.contains('hidden')) {
+                closeModalFunc();
+            }
+        });
+    </script>
+</body>
+</html>
